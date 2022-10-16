@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[UserController::class,'home'])->name('home');
 
 Route::group(['middleware' => 'auth'],function(){
 
@@ -37,6 +35,6 @@ Route::group(['middleware' => 'auth'],function(){
        Route::get('/',[AdminController::class,'index'])->name('index');
    });
 });
-Route::get('/',[UserController::class,'view']);
+
 
 require __DIR__.'/auth.php';

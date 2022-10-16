@@ -11,8 +11,9 @@ class UserController extends Controller
     {
         return view('user.dashboard');
     }
-    public function view()
+    public function home()
     {
-        return view('dashboard');
+        return view('welcome');
     }
+
 }
