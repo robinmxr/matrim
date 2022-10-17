@@ -37,6 +37,5 @@ Route::group(['middleware' => 'auth'],function(){
        Route::get('/',[AdminController::class,'index'])->name('index');
    });
 });
-Route::get('/',[UserController::class,'view']);
 
 require __DIR__.'/auth.php';

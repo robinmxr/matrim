@@ -1,10 +1,3 @@
-<html>
-<head>
-    <title>
-        @yield('title') - Lara
-    </title>
-</head>
-<body>
+@include('partials.header')
 @yield('body')
-</body>
-</html>
+@include('partials.footer')
