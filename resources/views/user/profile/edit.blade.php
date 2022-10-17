@@ -1,3 +1,21 @@
+@extends('layouts.master')
+
+@section('body')
+<section class="breadcrumbs">
+    <div class="container">
+
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>Inner Page</h2>
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Inner Page</li>
+        </ol>
+      </div>
+
+    </div>
+  </section><!-- End Breadcrumbs -->
+
+
 <div class="container rounded bg-white mt-5 mb-5">
     <div class="row">
         <div class="col-md-3 border-right">
@@ -40,3 +58,4 @@
 </div>
 </div>
 </div>
+@endsection
