@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[UserController::class,'home'])->name('home');
 
 Route::group(['middleware' => 'auth'],function(){
 
@@ -26,6 +24,7 @@ Route::group(['middleware' => 'auth'],function(){
        'as' => 'user.'
    ],function(){
         Route::get('/',[UserController::class,'index'])->name('index');
+        Route::get('/profile',[UserController::class,'viewprofile'])->name('profile.view');
    });
 
 

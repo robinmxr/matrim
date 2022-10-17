@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -11,8 +13,14 @@ class UserController extends Controller
     {
         return view('user.dashboard');
     }
-    public function view()
+    public function home()
     {
-        return view('dashboard');
+        return view('welcome');
     }
+    public function viewprofile()
+    {
+        $user = Auth::user();
+        return view('user.profile.view',compact('user'));
+    }
+
 }
