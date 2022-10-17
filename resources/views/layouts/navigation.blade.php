@@ -33,13 +33,9 @@
                         </button>
                     </x-slot>
 
-                    @if(Auth::user()->is_admin)
-                    <x-slot name="content">
-                        <x-dropdown-link :href="route('admin.index')">
-                            {{ __('ADMIN') }}
-                        </x-dropdown-link>
-                    </x-slot>
-                    @endif
+
+
+
 
                     <x-slot name="content">
                         <!-- Authentication -->
@@ -52,6 +48,7 @@
                                 {{ __('Log Out') }}
                             </x-dropdown-link>
                         </form>
+
                     </x-slot>
                 </x-dropdown>
             </div>

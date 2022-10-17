@@ -24,6 +24,7 @@ Route::group(['middleware' => 'auth'],function(){
        'as' => 'user.'
    ],function(){
         Route::get('/',[UserController::class,'index'])->name('index');
+        Route::get('/profile',[UserController::class,'viewprofile'])->name('profile.view');
    });
 
 
