@@ -26,21 +26,20 @@
             <div class="p-3 py-5">
 
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h4 class="text-right">Profile Settings</h4>
+                    <h4 class="text-right">Personal Information</h4>
                 </div>
                 <div class="row mt-2">
-                    <label class="labels mb-2 mb-2">Name</label><input type="text" name="name" class="form-control" placeholder="Enter Your Name" value="{{ $user->name }}">
+                    <label class="labels mb-2 mb-2">Name</label><input type="text" name="name" class="form-control"  value="{{ $user->name }}">
                 </div>
                 <div class="row mt-2">
-                    <label class="labels mb-2 mb-2">Gender</label>
-                    <select name="gender" class="form-select">
-                        <option selected>Please Select</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                      </select>
+                    <label class="labels mb-2 mb-2">Occupation</label><input type="text" name="occupation" class="form-control"  value="{{ $user->occupation }}">
                 </div>
+
                 <div class="row mt-2">
                     <label class="labels mb-2">Age</label><input type="number" name="age" class="form-control"  value="{{ $user->age }}">
+                </div>
+                <div class="row mt-2">
+                    <label class="labels mb-2">BirthDay</label><input type="date" name="birthdate" class="form-control" value="{{ $user->birthdate }}">
                 </div>
                 <div class="row mt-2">
                     <label class="labels mb-2">Area</label><input type="text" name="area" class="form-control" value="{{ $user->area }}">
@@ -61,13 +60,14 @@
             <div class="p-3 py-5">
                 <div class="d-flex justify-content-between align-items-center experience"><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Additional Info</span></div><br>
                 <div class="row mt-2">
-                    <label class="labels mb-2">Interests</label><input type="text" name="interest" class="form-control" value="{{ $user->interests }}">
+                    <label class="labels mb-2">Interests</label><input type="text" name="interests" class="form-control" value="{{ $user->interests }}">
                 </div>
                 <div class="row mt-2">
-                    <label class="labels mb-2">About Me</label><textarea class="form-control">Test </textarea>
+                    <label class="labels mb-2">About Me</label><textarea name="about" class="form-control">{{ $user->about }} </textarea>
                 </div>
             </div>
-            <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Save Profile</button></div>
+            <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Save Changes</button></div>
+            <a href="{{ route('user.profile.view') }}" ><div class="mt-2 text-center"><div class="btn btn-secondary" >Go Back</div></div></a>
         </div>
 
     </div>

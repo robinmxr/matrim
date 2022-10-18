@@ -17,7 +17,8 @@
                 <x-label for="name" :value="__('Name')" />
 
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
-            </div>
+
+
 
             <!-- Email Address -->
             <div class="mt-4">
@@ -44,6 +45,14 @@
                                 type="password"
                                 name="password_confirmation" required />
             </div>
+                <div class="mt-4">
+                    <label class="labels mb-2 mb-2">Gender</label>
+                    <select name="gender" class="form-select-lg">
+                        <option selected>Please Select</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
 
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">

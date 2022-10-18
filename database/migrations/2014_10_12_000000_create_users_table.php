@@ -20,9 +20,11 @@ class CreateUsersTable extends Migration
             $table->string('area')->nullable();
             $table->string('address')->nullable();
             $table->string('interests')->nullable();
-            $table->date('birthdate')->nullable();
+            $table->string('birthdate')->nullable();
             $table->integer('age')->nullable();
             $table->string('gender')->nullable();
+            $table->text('about')->nullable();
+            $table->string('occupation')->nullable();
             $table->boolean('is_admin')->default(false);
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();

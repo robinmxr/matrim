@@ -34,6 +34,7 @@ class UserController extends Controller
 //         $request->validate([
 //             'age' => 'digits:',
 //         ]);
+
          $user->update($request->all());
          return redirect()->route('user.profile.view');
 
