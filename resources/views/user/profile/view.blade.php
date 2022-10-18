@@ -1,4 +1,4 @@
-
+a
 @extends('layouts.master')
 
 @section('body')
@@ -17,27 +17,26 @@
   </section><!-- End Breadcrumbs -->
 
 
-<div class="container rounded bg-white mt-1 mb-5">
+<div class="container rounded bg-white mt-5 mb-5">
     <div class="row">
         <div class="col-md-3 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">Edogaru</span><span class="text-black-50">edogaru@mail.com.my</span><span> </span></div>
-            <div class="mt-4 text-center">
-                <button class="btn btn-primary profile-button" type="button">
-                    Edit Profile
-                </button>
-            </div>
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">{{ $user->name }}</span><span class="text-black-50">{{ $user->email }}</span><span> </span></div>
         </div>
         <div class="col-md-5 border-right">
             <div class="p-3 py-5">
                 <div class="row mt-2">
                     <div class="alert alert-success"><h5 class="text">Name</h5>{{ $user->name }}</div>
-                    <div class="alert alert-danger"><h5 class="text">Gender</h5>Male</div>
+                    <div class="alert alert-danger"><h5 class="text">Gender</h5>{{ $user->gender }}</div>
                     <div class="alert alert-secondary"><h5 class="text">Age </h5>{{ $user->name }}</div>
                     <div class="alert alert-warning"><h5 class="text">Area </h5>{{ $user->name }}</div>
                     <div class="alert alert-danger"><h5 class="text">Address </h5>{{ $user->name }}</div>
                     <div class="alert alert-success"><h5 class="text">Interests</h5>{{ $user->name }}</div>
                 </div>
-
+                <div class="mt-3 text-center">
+                    <button class="btn btn-primary profile-button" type="button">
+                        <a href="{{ route('user.profile.edit') }}">Edit Profile</a>
+                    </button>
+                </div>
             </div>
         </div>
         <div class="col-md-4">
