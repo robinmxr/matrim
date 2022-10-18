@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('interests')->nullable();
             $table->date('birthdate')->nullable();
             $table->integer('age')->nullable();
+            $table->string('gender')->nullable();
             $table->boolean('is_admin')->default(false);
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();

@@ -1,4 +1,4 @@
-a
+
 @extends('layouts.master')
 
 @section('body')
@@ -8,7 +8,7 @@ a
       <div class="d-flex justify-content-between align-items-center">
         <h2>Inner Page</h2>
         <ol>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="#">Home</a></li>
           <li>Inner Page</li>
         </ol>
       </div>
@@ -27,10 +27,10 @@ a
                 <div class="row mt-2">
                     <div class="alert alert-success"><h5 class="text">Name</h5>{{ $user->name }}</div>
                     <div class="alert alert-danger"><h5 class="text">Gender</h5>{{ $user->gender }}</div>
-                    <div class="alert alert-secondary"><h5 class="text">Age </h5>{{ $user->name }}</div>
-                    <div class="alert alert-warning"><h5 class="text">Area </h5>{{ $user->name }}</div>
-                    <div class="alert alert-danger"><h5 class="text">Address </h5>{{ $user->name }}</div>
-                    <div class="alert alert-success"><h5 class="text">Interests</h5>{{ $user->name }}</div>
+                    <div class="alert alert-secondary"><h5 class="text">Age </h5>{{ $user->age }}</div>
+                    <div class="alert alert-warning"><h5 class="text">Area </h5>{{ $user->area }}</div>
+                    <div class="alert alert-danger"><h5 class="text">Address </h5>{{ $user->address }}</div>
+                    <div class="alert alert-success"><h5 class="text">Interests</h5>{{ $user->interests }}</div>
                 </div>
                 <div class="mt-3 text-center">
                     <button class="btn btn-primary profile-button" type="button">
@@ -41,8 +41,10 @@ a
         </div>
         <div class="col-md-4">
             <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center experience"><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Contact Information</span></div><br>
                 <div class="row mt-2">
-                    <div class="alert alert-secondary"><h5 class="text">Contacts</h5>{{ $user->name }}</div>
+                    <div class="alert alert-secondary"><h5 class="text">Phone</h5>{{ $user->phone }}</div>
+                    <div class="alert alert-secondary"><h5 class="text">Email</h5>{{ $user->email }}</div>
                 </div>
             </div>
         </div>
