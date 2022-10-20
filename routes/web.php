@@ -26,6 +26,7 @@ Route::group(['middleware' => 'auth'],function(){
         Route::get('/',[UserController::class,'index'])->name('index');
         Route::get('/profile',[UserController::class,'viewprofile'])->name('profile.view');
         Route::get('/profile/edit',[UserController::class,'editprofile'])->name('profile.edit');
+        Route::post('/profile/edit',[UserController::class,'updateprofile'])->name('profile.update');
    });
 
 
