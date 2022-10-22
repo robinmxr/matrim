@@ -17,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[UserController::class,'home'])->name('home');
 
+Route::get('/test', function () {
+    return view('admin.dashboard');
+});
+
 Route::group(['middleware' => 'auth'],function(){
 
    Route::group([
