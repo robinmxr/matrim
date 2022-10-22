@@ -5,14 +5,16 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use App\Http\Controllers\User;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
 
     public function index()
     {
-        return view('admin.dashboard');
+        $notifications = auth()->user()->unreadNotifications;
+        return view('admin.dashboard',compact('notifications'));
     }
 
     /**
