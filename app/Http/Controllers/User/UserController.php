@@ -39,4 +39,15 @@ class UserController extends Controller
          return redirect()->route('user.profile.view');
 
      }
+     public function showUsers()
+     {
+         $users = User::all();
+         return view('user.list',compact('users'));
+     }
+
+     public function viewUser($id)
+     {
+         $user = User::find($id);
+         return view('user.view',compact('user'));
+     }
 }

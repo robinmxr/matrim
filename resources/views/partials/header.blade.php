@@ -61,6 +61,7 @@
           <li><a class="nav-link scrollto active" href="{{ route('home') }}">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="{{ route('user.list') }}">Users</a></li>
           @guest
           <li><a class="nav-link scrollto " href="{{ route('register') }}">Register</a></li>
           <li><a class="nav-link scrollto" href="{{ route('login') }}">Login</a></li>
