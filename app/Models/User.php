@@ -30,6 +30,7 @@ class User extends Authenticatable
         'birthdate',
         'about',
         'occupation',
+        'status'
     ];
 
     /**

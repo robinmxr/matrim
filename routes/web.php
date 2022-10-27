@@ -40,6 +40,12 @@ Route::group(['middleware' => 'auth'],function(){
        'as' => 'admin.',
    ],function(){
        Route::get('/',[AdminController::class,'index'])->name('index');
+       Route::get('/user/',[AdminController::class,'showUsers'])->name('user.show');
+       Route::get('/user/{id}',[AdminController::class,'viewUser'])->name('user.view');
+       Route::post('/user/{id}/approve',[AdminController::class,'approveUser'])->name('user.approve');
+       Route::post('/user/{id}',[AdminController::class,'declineUser'])->name('user.decline');
+
+
    });
 });
 

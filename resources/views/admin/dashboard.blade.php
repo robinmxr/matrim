@@ -88,8 +88,8 @@
         </div>
           @foreach($notifications as $notif)
               <div class="alert alert-dark">
-                  User {{ $notif->data['name'] }} [{{ $notif->data['email'] }}] Has Registered.
-                  <a class="float-right" href="#">View</a>
+                  User #{{ $notif->data['id']}} {{ $notif->data['name'] }} [{{ $notif->data['email'] }}] Has Registered.
+                  <a class="float-right" href="{{ route('admin.user.view',$notif->data['id']) }}">View</a>
               </div>
           @endforeach
         <!-- /.row -->

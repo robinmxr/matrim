@@ -17,14 +17,31 @@ class AdminController extends Controller
         return view('admin.dashboard',compact('notifications'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create()
+    public function showUsers()
     {
-        //
+        $users = User::all();
+        return view('admin.user.list',compact('users'));
+    }
+
+    public function viewUser($id)
+    {
+        $user = User::find($id);
+        return view('admin.user.view',compact('user'));
+    }
+
+    public function approveUser($id)
+    {
+    $user = User::find($id);
+    $user->status = 'active';
+    $user->save();
+    return redirect()->route('admin.user.show');
+    }
+
+    public function declineUser($id)
+    {
+    $user = User::find($id);
+    $user->delete();
+    return redirect()->route('admin.user.show');
     }
 
     /**
