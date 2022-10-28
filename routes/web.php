@@ -35,6 +35,8 @@ Route::group(['middleware' => 'auth'],function(){
 
         Route::get('/show',[UserController::class,'showUsers'])->name('list');
         Route::get('/show/{id}',[UserController::class,'viewUser'])->name('view');
+
+        Route::get('/status',[UserController::class,'showStatus'])->name('status');
    });
 
 

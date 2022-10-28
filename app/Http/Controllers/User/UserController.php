@@ -50,4 +50,9 @@ class UserController extends Controller
          $user = User::find($id);
          return view('user.view',compact('user'));
      }
+
+     public function showStatus()
+     {
+        return view('user.status');
+     }
 }

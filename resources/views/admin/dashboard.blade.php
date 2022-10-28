@@ -88,6 +88,7 @@
         </div>
           @foreach($notifications as $notif)
               <div class="alert alert-dark">
+              <span class="right badge badge-danger">New</span>
                   User #{{ $notif->data['id']}} {{ $notif->data['name'] }} [{{ $notif->data['email'] }}] Has Registered.
                   <a class="float-right" href="{{ route('admin.user.view',$notif->data['id']) }}">View</a>
               </div>

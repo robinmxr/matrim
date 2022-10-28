@@ -1,9 +1,6 @@
 @extends('layouts.master')
 @section('body')
 
-
-
-
     <section id="team" class="team section-bg">
         <div class="container" data-aos="fade-up">
 
@@ -20,10 +17,7 @@
                         <div class="member-img">
                             <img src="{{ asset('img/team/team-1.jpg')}}" class="img-fluid" alt="">
                             <div class="social">
-                                <a href=""><i class="bi bi-twitter"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
+                               
                             </div>
                         </div>
                         <div class="member-info">
