@@ -17,19 +17,24 @@
 
 
 
-    <div class="row">
-        <div class="col-md-10">
-                <div class="d-flex justify-content-center align-items-center mb-3">
-                    <div class="alert alert-warning text-center">
-                        <h6>Your account has been registered and pending for approval. Please pay your registration fee now.</h6>
-                    </div>
-                </div>
-           
-                <div class="mt-3 text-center">
+    <div class="row mt-5 mb-5">
+        <div>
+          <div class="card">
+            <div class="card-header">
+              Notice
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Your registration has been completed</h5>
+              <p class="card-text">Please pay the registration fee 500 bdt</p>
+              <small>You will get a notification after admin approval</small>
+              <div class="mt-3 mb-3 text-center">
 
-                    <a href="{{ route('user.profile.edit') }}"> <button class="btn btn-lg btn-primary profile-button">Edit Profile</button></a>
+                <a href="{{ route('user.profile.edit') }}"> <button class="btn btn-lg btn-primary profile-button">
+                  Pay</button></a>
 
-                </div>
+            </div>
+            </div>
+          </div>
         </div>
     </div>
 </div>
