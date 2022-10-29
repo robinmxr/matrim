@@ -209,7 +209,6 @@ class SslCommerzPaymentController extends Controller
         }
 
 
-
     }
 
     public function fail(Request $request)
