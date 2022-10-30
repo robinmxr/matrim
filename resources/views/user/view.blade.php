@@ -2,14 +2,14 @@
 @section('body')
 <div class="container">
     <div class="main-body">
-    
+
           <!-- Breadcrumb -->
           <nav aria-label="breadcrumb" class="main-breadcrumb">
             <ol class="breadcrumb">
             </ol>
           </nav>
           <!-- /Breadcrumb -->
-    
+
           <div class="row gutters-sm">
             <div class="col-md-4 mb-3">
               <div class="card">
@@ -19,8 +19,8 @@
                     <div class="mt-3">
                       <h4>John Doe</h4>
                       <div class="col-sm-12">
-                      <a class="btn btn-success" target="__blank" href=>Like</a>
-                      <a class="btn btn-danger" target="__blank" href=>Message</a>
+
+                      <a class="btn btn-danger" target="__blank" href="#">Message</a>
                     </div>
                     </div>
                   </div>

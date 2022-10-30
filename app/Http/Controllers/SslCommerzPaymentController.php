@@ -5,19 +5,21 @@ namespace App\Http\Controllers;
 use DB;
 use Illuminate\Http\Request;
 use App\Library\SslCommerz\SslCommerzNotification;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class SslCommerzPaymentController extends Controller
 {
 
-    public function exampleEasyCheckout()
+    public function showPayment()
     {
-        return view('exampleEasycheckout');
+        return view('showpayment');
     }
 
-    public function exampleHostedCheckout()
-    {
-        return view('exampleHosted');
-    }
+//    public function exampleHostedCheckout()
+//    {
+//        return view('exampleHosted');
+//    }
 
     public function index(Request $request)
     {
@@ -96,14 +98,14 @@ class SslCommerzPaymentController extends Controller
         # In orders table order uniq identity is "transaction_id","status" field contain status of the transaction, "amount" is the order amount to be paid and "currency" is for storing Site Currency which will be checked with paid currency.
 
         $post_data = array();
-        $post_data['total_amount'] = '10'; # You cant not pay less than 10
+        $post_data['total_amount'] = '500'; # You cant not pay less than 10
         $post_data['currency'] = "BDT";
         $post_data['tran_id'] = uniqid(); // tran_id must be unique
 
         # CUSTOMER INFORMATION
-        $post_data['cus_name'] = 'Customer Name';
-        $post_data['cus_email'] = 'customer@mail.com';
-        $post_data['cus_add1'] = 'Customer Address';
+        $post_data['cus_name'] = Auth::user()->name;
+        $post_data['cus_email'] = Auth::user()->email;
+        $post_data['cus_add1'] = 'Bangladesh';
         $post_data['cus_add2'] = "";
         $post_data['cus_city'] = "";
         $post_data['cus_state'] = "";
@@ -161,7 +163,7 @@ class SslCommerzPaymentController extends Controller
 
     public function success(Request $request)
     {
-        echo "Transaction is Successful";
+
 
         $tran_id = $request->input('tran_id');
         $amount = $request->input('amount');
@@ -177,6 +179,11 @@ class SslCommerzPaymentController extends Controller
         if ($order_detials->status == 'Pending') {
             $validation = $sslc->orderValidate($request->all(), $tran_id, $amount, $currency);
 
+            $id = Auth::user()->id;
+            $user = User::find($id);
+            $user->payment_status = 'paid';
+            $user->save();
+
             if ($validation == TRUE) {
                 /*
                 That means IPN did not work or IPN URL was not set in your merchant panel. Here you need to update order status
@@ -187,7 +194,7 @@ class SslCommerzPaymentController extends Controller
                     ->where('transaction_id', $tran_id)
                     ->update(['status' => 'Processing']);
 
-                echo "<br >Transaction is successfully Completed";
+
             } else {
                 /*
                 That means IPN did not work or IPN URL was not set in your merchant panel and Transation validation failed.
@@ -208,6 +215,7 @@ class SslCommerzPaymentController extends Controller
             echo "Invalid Transaction";
         }
 
+        return redirect()->route('user.status');
 
 
     }
@@ -230,6 +238,7 @@ class SslCommerzPaymentController extends Controller
         } else {
             echo "Transaction is Invalid";
         }
+        return redirect()->route('user.status');
 
     }
 
