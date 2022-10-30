@@ -25,18 +25,31 @@
             </div>
             <div class="card-body">
               <h5 class="card-title">Your registration has been completed</h5>
+                @if(auth()->user()->payment_status == 'unpaid')
               <p class="card-text">Please pay the registration fee 500 bdt</p>
               <small>You will get a notification after admin approval</small>
               <div class="mt-3 mb-3 text-center">
 
-                <a href="{{ route('user.profile.edit') }}"> <button class="btn btn-lg btn-primary profile-button">
-                  Pay</button></a>
+                <a href="{{ route('payment.show') }}"> <button class="btn btn-lg btn-primary profile-button">
+                  Pay Now</button></a>
+
 
             </div>
+                @else
+                    <p class="card-text">Your Registration Fee Has been Paid.</p>
+                    <small>You will get a notification after admin approval</small>
+                    <div class="mt-3 mb-3 text-center">
+
+                        <a href="{{ route('user.profile.view') }}"> <button class="btn btn-lg btn-primary profile-button">
+                                Go to Dashboard</button></a>
+
+
+                    </div>
+                    @endif
+
             </div>
           </div>
         </div>
     </div>
-</div>
-</div>
+
 @endsection
