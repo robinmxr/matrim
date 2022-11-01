@@ -11,16 +11,30 @@ class UserController extends Controller
 {
     public function index()
     {
+
         return view('user.dashboard');
     }
     public function home()
     {
         return view('welcome');
     }
+    public function about()
+    {
+        return view('about');
+    }
+    public function contact()
+    {
+        return view('contact');
+    }
+    public function search()
+    {
+        return view('search');
+    }
     public function viewprofile()
     {
         $user = Auth::user();
-        return view('user.profile.view',compact('user'));
+        $notifications = $user->unReadNotifications;
+        return view('user.profile.view',compact('user','notifications'));
     }
 
     public function editprofile()
@@ -54,5 +68,15 @@ class UserController extends Controller
      public function showStatus()
      {
         return view('user.status');
+     }
+
+     public function markReadNotifications(Request $request)
+     {
+         auth()->user()->unReadNotifications
+             ->when($request->input('id'),function ($query) use ($request)
+             {
+                return $query->where('id',$request->input('id'));
+             })->markAsRead();
+         return redirect()->route('user.profile.view');
      }
 }

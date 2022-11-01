@@ -90,7 +90,15 @@
               <div class="alert alert-dark">
               <span class="right badge badge-danger">New</span>
                   User #{{ $notif->data['id']}} {{ $notif->data['name'] }} [{{ $notif->data['email'] }}] Has Registered.
+
+
                   <a class="float-right" href="{{ route('admin.user.view',$notif->data['id']) }}">View</a>
+                  <form action="{{ route('admin.read.notifications') }}" method="post">
+                      @csrf
+                      <input type="hidden" value="{{ $notif->id }}" name="id">
+                      <button type="submit"><i class="bi bi-x-circle-fill"></button>
+                  </form>
+
               </div>
           @endforeach
         <!-- /.row -->

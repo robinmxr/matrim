@@ -722,7 +722,7 @@ section {
 }
 
 .featured-services .icon-box:hover::before {
-  background: #425F57;
+  background: #6ba7f5;
   top: 0;
   border-radius: 0px;
 }
@@ -1841,7 +1841,7 @@ body {
 }
 
 .profile-button {
-  background: rgb(99, 39, 120);
+  background: #B73E3E;
   box-shadow: none;
   border: none
 }

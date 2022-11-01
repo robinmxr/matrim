@@ -18,9 +18,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[UserController::class,'home'])->name('home');
 
-Route::get('/test', function () {
-    return view('admin.dashboard');
-});
+Route::get('/about',[UserController::class,'about'])->name('about');
+Route::get('/contact',[UserController::class,'contact'])->name('contact');
+Route::get('/search',[UserController::class,'search'])->name('search');
 
 Route::group(['middleware' => 'auth'],function(){
 
@@ -30,6 +30,7 @@ Route::group(['middleware' => 'auth'],function(){
    ],function(){
         Route::get('/',[UserController::class,'index'])->name('index');
         Route::get('/profile',[UserController::class,'viewprofile'])->name('profile.view');
+        Route::post('/profile',[UserController::class,'markReadNotifications'])->name('read.notifications');
         Route::get('/profile/edit',[UserController::class,'editprofile'])->name('profile.edit');
         Route::post('/profile/edit',[UserController::class,'updateprofile'])->name('profile.update');
 
@@ -47,10 +48,11 @@ Route::group(['middleware' => 'auth'],function(){
        'as' => 'admin.',
    ],function(){
        Route::get('/',[AdminController::class,'index'])->name('index');
+       Route::post('/',[AdminController::class,'markReadNotifications'])->name('read.notifications');
        Route::get('/user/',[AdminController::class,'showUsers'])->name('user.show');
        Route::get('/user/{id}',[AdminController::class,'viewUser'])->name('user.view');
        Route::post('/user/{id}/approve',[AdminController::class,'approveUser'])->name('user.approve');
-       Route::post('/user/{id}',[AdminController::class,'declineUser'])->name('user.decline');
+       Route::post('/user/{id}/decline',[AdminController::class,'declineUser'])->name('user.decline');
 
 
    });

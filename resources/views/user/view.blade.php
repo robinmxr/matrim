@@ -17,7 +17,7 @@
                   <div class="d-flex flex-column align-items-center text-center">
                     <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin">
                     <div class="mt-3">
-                      <h4>John Doe</h4>
+                      <h4>{{ $user->name }}</h4>
                       <div class="col-sm-12">
 
                       <a class="btn btn-danger" target="__blank" href="#">Message</a>
@@ -50,7 +50,7 @@
                       <h6 class="mb-0">Full Name</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      Kenneth Valdez
+                      {{ $user->name }}
                     </div>
                   </div>
                   <hr>
@@ -59,7 +59,7 @@
                       <h6 class="mb-0">Age</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      Kenneth Valdez
+                      {{ $user->age }}
                     </div>
                   </div>
                   <hr>
@@ -68,7 +68,7 @@
                       <h6 class="mb-0">Gender</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      Kenneth Valdez
+                      {{ $user->gender }}
                     </div>
                   </div>
                   <hr>
@@ -77,7 +77,7 @@
                       <h6 class="mb-0">Occupation</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      Kenneth Valdez
+                      {{ $user->occupation }}
                     </div>
                   </div>
                   <hr>
@@ -86,7 +86,7 @@
                       <h6 class="mb-0">Birthday</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      Kenneth Valdez
+                      {{ $user->birthdate }}
                     </div>
                   </div>
                   <hr>
@@ -95,7 +95,7 @@
                       <h6 class="mb-0">Email</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      fip@jukmuh.al
+                      {{ $user->email }}
                     </div>
                   </div>
                   <hr>
@@ -104,7 +104,7 @@
                       <h6 class="mb-0">Phone</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      (239) 816-9029
+                      {{ $user->phone }}
                     </div>
                   </div>
                   <hr>
@@ -113,7 +113,7 @@
                       <h6 class="mb-0">Area</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      {{ $user->name }}
+                      {{ $user->area }}
                     </div>
                   </div>
                   <hr>
@@ -122,7 +122,7 @@
                       <h6 class="mb-0">Address</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      Bay Area, San Francisco, CA
+                      {{ $user->address }}
                     </div>
                   </div>
                 </div>

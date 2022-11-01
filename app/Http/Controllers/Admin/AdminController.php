@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Models\User;
@@ -34,6 +35,7 @@ class AdminController extends Controller
     $user = User::find($id);
     $user->status = 'active';
     $user->save();
+    event( new Registered($user));
     return redirect()->route('admin.user.show');
     }
 
@@ -98,5 +100,14 @@ class AdminController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function markReadNotifications(Request $request)
+    {
+        auth()->user()->unReadNotifications
+            ->when($request->input('id'),function ($query) use ($request)
+            {
+                return $query->where('id',$request->input('id'));
+            })->markAsRead();
+        return redirect()->route('admin.index');
     }
 }
