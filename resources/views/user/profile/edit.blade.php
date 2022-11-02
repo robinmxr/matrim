@@ -67,7 +67,7 @@
                 </div>
             </div>
             <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Save Changes</button></div>
-            <a href="{{ route('user.profile.view') }}" ><div class="mt-2 text-center"><div class="btn btn-secondary" >Go Back</div></div></a>
+            <a href="{{ route('user.profile.view') }}" ><div class="mt-2 text-center"><div class="btn btn-secondary mb-3" >Go Back</div></div></a>
         </div>
 
     </div>

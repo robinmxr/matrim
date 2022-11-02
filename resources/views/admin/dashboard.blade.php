@@ -96,7 +96,7 @@
                   <form action="{{ route('admin.read.notifications') }}" method="post">
                       @csrf
                       <input type="hidden" value="{{ $notif->id }}" name="id">
-                      <button type="submit" class="left">Close</button>
+                      <button type="submit"><i class="bi bi-x-circle-fill"></button>
                   </form>
 
               </div>

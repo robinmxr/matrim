@@ -1,10 +1,26 @@
 @extends('layouts.master')
 @section('body')
-<div class="container">
-    <div class="card mb-2 mt-2">
-    <div class="py-5 text-center">
-        <h2>Matrimon.</h2>
 
+<section class="breadcrumbs">
+    <div class="container">
+
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>Profile</h2>
+        <ol>
+          <li><a href="#">Home</a></li>
+          <li>Profile</li>
+        </ol>
+      </div>
+
+    </div>
+  </section><!-- End Breadcrumbs -->
+
+
+
+<div class="container">
+    <div class="card mb-3 mt-3 p-3">
+    <div class="py-5 text-center">
+        <h2>Matrimon</h2>
         <p >Pay the 500 BDT Registration Fee to Activate Your Account.</p>
     </div>
 
@@ -20,13 +36,13 @@
                         <h6 class="my-0">Product name</h6>
                         <small class="text-muted">Brief description</small>
                     </div>
-                    <span class="text-muted">1000</span>
+                    <span class="text-muted">500</span>
                 </li>
 
 
                 <li class="list-group-item d-flex justify-content-between">
                     <span>Total (BDT)</span>
-                    <strong>1200 TK</strong>
+                    <strong>500 TK</strong>
                 </li>
             </ul>
         </div>
@@ -77,11 +93,7 @@
                     </div>
 
                 </div>
-                <hr class="mb-4">
-
-
-                <hr class="mb-4">
-                <button class="btn btn-primary btn-lg btn-block mb-4" id="sslczPayBtn"
+                <button class="btn btn-primary btn-lg btn-block mb-4 mt-4" id="sslczPayBtn"
                         token="if you have any token validation"
                         postdata="your javascript arrays or objects which requires in backend"
                         order="If you already have the transaction generated for current order"

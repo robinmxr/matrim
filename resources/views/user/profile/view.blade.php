@@ -21,18 +21,29 @@
     <div class="row">
         @foreach($notifications as $notif)
             <div class="alert alert-success">
-              <h1>Dear {{ $notif->data['name']}},</h1>  Your Account Status is now {{ $user->status }}
-            <form action="{{ route('user.read.notifications') }}" method="post">
-                @csrf
-                <input type="hidden" value="{{ $notif->id }}">
-                <button type="submit">Close</button>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <h1>Dear {{ $notif->data['name']}},</h1>  Your Account Status is changed to  <span>{{ $notif->data['status'] }}</span>
+                    </div>
+                    <form action="{{ route('user.read.notifications') }}" method="post">
+                        @csrf
+                        <input type="hidden" value="{{ $notif->id }}">
+                        <button type="submit">
+                            <i class="bi bi-x"></i>
+                        </button>
             </form>
+                </div>
             </div>
         @endforeach
         <div class="col-md-3 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">{{ $user->name }}</span><span class="text-black-50">{{ $user->email }}</span><span> </span></div>
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">{{ $user->name }}</span>
+            </div>
+
+            <div class="alert alert-warning"><h5 class="text">Account Status</h5>{{ $user->status }}</div>
             <div class="alert alert-warning"><h5 class="text">Phone</h5>{{ $user->phone }}</div>
-            <div class="alert alert-warning"><h5 class="text">Email</h5>{{ $user->email }}</div>
+            <div class="alert alert-warning font-italic"><h5 class="text">Email</h5>
+                <p class="font-italic">{{ $user->email }}</p>
+                </div>
         </div>
         <div class="col-md-5 border-right">
             <div class="p-3 py-5">
@@ -62,9 +73,8 @@
                 <div class="row mt-2">
                     <div class="alert alert-success"><h5 class="text">Age </h5>{{ $user->age }}</div>
                     <div class="alert alert-success"><h5 class="text">Occupation</h5>{{ $user->occupation }}</div>
-                    <div class="alert alert-success"><h5 class="text">Interests</h5>{{ $user->interests }}</div>
-                    <div class="alert alert-success"><h5 class="text">About Me</h5>{{ $user->about }}</div>
-
+                    <div class="alert alert-success "><h5 class="text text-wrap">Interests</h5>{{ $user->interests }}</div>
+                    <div class="alert alert-success "><h5 class="text text-wrap">About Me</h5>{{ $user->about }}</div>
                 </div>
             </div>
         </div>

@@ -40,9 +40,7 @@
                                 <ul class="list-group list-group-unbordered mb-3">
                                     <li class="list-group-item">
                                         <b>Phone</b> <a class="float-right">{{ $user->phone }}</a>
-
                                     </li>
-
                                 </ul>
 
 

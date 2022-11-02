@@ -18,6 +18,18 @@ class UserController extends Controller
     {
         return view('welcome');
     }
+    public function about()
+    {
+        return view('about');
+    }
+    public function contact()
+    {
+        return view('contact');
+    }
+    public function search()
+    {
+        return view('search');
+    }
     public function viewprofile()
     {
         $user = Auth::user();
