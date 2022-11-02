@@ -41,6 +41,12 @@
                                     <li class="list-group-item">
                                         <b>Phone</b> <a class="float-right">{{ $user->phone }}</a>
                                     </li>
+                                    <li class="list-group-item">
+                                        <b>Payment Status</b> <a class="float-right">{{ $user->payment_status }}</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <b>Account Status</b> <a class="float-right">{{ $user->status }}</a>
+                                    </li>
                                 </ul>
 
 
@@ -87,8 +93,10 @@
                         </div>
                         <!-- /.card -->
                     </div>
+                    @if($user->status == 'pending')
                     <div class="col-md-6"><form method="post" action="{{ route('admin.user.approve',$user->id) }}">@csrf<button class="btn btn-secondary float-right" type="submit" >Approve</button></form> </div>
                     <div class="col-md-6"><form method="post" action="{{ route('admin.user.decline',$user->id) }}">@csrf<button class="btn btn-danger" type="submit">Decline</button></form> </div>
+                    @endif
                 </div>
             </div>
         </section>

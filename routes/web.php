@@ -21,6 +21,7 @@ Route::get('/',[UserController::class,'home'])->name('home');
 Route::get('/about',[UserController::class,'about'])->name('about');
 Route::get('/contact',[UserController::class,'contact'])->name('contact');
 Route::get('/search',[UserController::class,'search'])->name('search');
+Route::get('/search/{gender}',[UserController::class,'searchresult'])->name('search.view');
 
 Route::group(['middleware' => 'auth'],function(){
 

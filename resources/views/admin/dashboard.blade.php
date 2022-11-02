@@ -88,16 +88,21 @@
         </div>
           @foreach($notifications as $notif)
               <div class="alert alert-dark">
+                  <div class="d-flex justify-content-between">
+                      <div>
               <span class="right badge badge-danger">New</span>
                   User #{{ $notif->data['id']}} {{ $notif->data['name'] }} [{{ $notif->data['email'] }}] Has Registered.
+                      </div>
 
-
-                  <a class="float-right" href="{{ route('admin.user.view',$notif->data['id']) }}">View</a>
-                  <form action="{{ route('admin.read.notifications') }}" method="post">
-                      @csrf
-                      <input type="hidden" value="{{ $notif->id }}" name="id">
-                      <button type="submit"><i class="bi bi-x-circle-fill"></button>
-                  </form>
+                  <a href="{{ route('admin.user.view',$notif->data['id']) }}">View</a>
+                      <form action="{{ route('admin.read.notifications') }}" method="post">
+                          @csrf
+                          <input type="hidden" value="{{ $notif->id }}">
+                          <button type="submit">
+                              <i class="bi bi-x"></i>
+                          </button>
+                      </form>
+                  </div>
 
               </div>
           @endforeach

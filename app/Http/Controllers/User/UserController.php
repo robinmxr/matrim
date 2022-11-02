@@ -70,6 +70,12 @@ class UserController extends Controller
         return view('user.status');
      }
 
+     public function searchresult($gender)
+     {
+         $users = User::where('gender',$gender)->get();
+         return view('searchresult',compact('users'));
+     }
+
      public function markReadNotifications(Request $request)
      {
          auth()->user()->unReadNotifications

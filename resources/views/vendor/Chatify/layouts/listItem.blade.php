@@ -18,8 +18,7 @@
 @endif
 
 {{-- -------------------- All users/group list -------------------- --}}
-
-@if($get='user')
+@if($get == 'users')
 <table class="messenger-list-item" data-contact="{{ $user->id }}">
     <tr data-action="0">
         {{-- Avatar side --}}

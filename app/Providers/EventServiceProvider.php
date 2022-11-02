@@ -20,6 +20,9 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
             SendNewUserNotification::class,
+
+        ],
+        Approved::class => [
             SendUserApprovalNotification::class,
         ],
     ];

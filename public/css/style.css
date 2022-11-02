@@ -1871,7 +1871,11 @@ color: #fff;
 .labels {
   font-size: 15px
 }
-
+.buttonbox {
+    height: 100px;
+    width: 100px;
+    margin: 20px;
+}
 .add-experience{
   background: #BA68C8;
   color: #fff;
