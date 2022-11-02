@@ -19,6 +19,16 @@
 
 <div class="container rounded bg-white mt-5 mb-5">
     <div class="row">
+        @foreach($notifications as $notif)
+            <div class="alert alert-success">
+              <h1>Dear {{ $notif->data['name']}},</h1>  Your Account Status is now {{ $user->status }}
+            <form action="{{ route('user.read.notifications') }}" method="post">
+                @csrf
+                <input type="hidden" value="{{ $notif->id }}">
+                <button type="submit">Close</button>
+            </form>
+            </div>
+        @endforeach
         <div class="col-md-3 border-right">
             <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">{{ $user->name }}</span><span class="text-black-50">{{ $user->email }}</span><span> </span></div>
             <div class="alert alert-warning"><h5 class="text">Phone</h5>{{ $user->phone }}</div>

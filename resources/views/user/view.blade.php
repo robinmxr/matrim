@@ -17,10 +17,10 @@
                   <div class="d-flex flex-column align-items-center text-center">
                     <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin">
                     <div class="mt-3">
-                      <h4>John Doe</h4>
+                      <h4>{{ $user->name }}</h4>
                       <div class="col-sm-12">
 
-                      <a class="btn btn-danger" target="__blank" href="#">Message</a>
+                      <a class="btn btn-danger" target="__blank" href="/message/{{ $user->id }}">Message</a>
                     </div>
                     </div>
                   </div>
@@ -31,12 +31,12 @@
                   <div class="d-flex flex-column">
                     <div class="mt-3">
                         <h6>Interests</h6>
-                    <small>auoe</small>
+                    <small>{{ $user->interests }}</small>
                     </div>
                     <hr>
                     <div class="mt-3">
                         <h6>About Me</h6>
-                    <small>auoe</small>
+                    <small>{{ $user->about }}</small>
 </div>
                   </div>
                 </div>
@@ -50,7 +50,7 @@
                       <h6 class="mb-0">Full Name</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      Kenneth Valdez
+                      {{ $user->name }}
                     </div>
                   </div>
                   <hr>
