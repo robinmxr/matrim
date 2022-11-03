@@ -7,7 +7,10 @@
       <h2>Matrimony in Bangladesh for finding your life partner</h2>
       <div class="d-flex">
         <a href="{{ route('search') }}" class="btn-get-started scrollto">Start Looking <i class="bi bi-search-heart"></i> </a>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5d1e86d (search page)
       </div>
     </div>
   </section><!-- End Hero -->
