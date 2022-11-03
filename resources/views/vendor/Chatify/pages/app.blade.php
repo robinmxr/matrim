@@ -5,10 +5,10 @@
         {{-- Header and search bar --}}
         <div class="m-header">
             <nav>
-                <a href="#"><i class="fas fa-inbox"></i> <span class="messenger-headTitle">MESSAGES</span> </a>
+                <a href="#"><i class="fas fa-inbox"></i> <span class="messenger-headTitle">Inbox</span> </a>
                 {{-- header buttons --}}
                 <nav class="m-header-right">
-                    <a href="#"><i class="fas fa-cog settings-btn"></i></a>
+{{--                    <a href="#"><i class="fas fa-cog settings-btn"></i></a>--}}
                     <a href="#" class="listView-x"><i class="fas fa-times"></i></a>
                 </nav>
             </nav>
@@ -18,8 +18,7 @@
             <div class="messenger-listView-tabs">
                 <a href="#" @if($type == 'user') class="active-tab" @endif data-view="users">
                     <span class="far fa-user"></span> People</a>
-                <a href="#" @if($type == 'group') class="active-tab" @endif data-view="groups">
-                    <span class="fas fa-users"></span> Groups</a>
+
             </div>
         </div>
         {{-- tabs and lists --}}
@@ -43,12 +42,7 @@
            </div>
 
            {{-- ---------------- [ Group Tab ] ---------------- --}}
-           <div class="@if($type == 'group') show @endif messenger-tab groups-tab app-scroll" data-view="groups">
-                {{-- items --}}
-                <p style="text-align: center;color:grey;margin-top:30px">
-                    <a target="_blank" style="color:{{$messengerColor}};" href="https://chatify.munafio.com/notes#groups-feature">Click here</a> for more info!
-                </p>
-             </div>
+
 
              {{-- ---------------- [ Search Tab ] ---------------- --}}
            <div class="messenger-tab search-tab app-scroll" data-view="search">

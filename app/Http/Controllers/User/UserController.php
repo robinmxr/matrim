@@ -45,9 +45,18 @@ class UserController extends Controller
      public function updateprofile(Request $request)
      {
          $user = Auth::user();
-//         $request->validate([
-//             'age' => 'digits:',
-//         ]);
+         if($request->hasFile('avatar'))
+         {
+             $request->validate([
+                 'avatar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:4096',
+             ]);
+             $imageName = time().'.'.$request->avatar->extension();
+
+             $request->avatar->move(public_path('storage/users-avatar'), $imageName);
+
+             $user->avatar = $imageName;
+         }
+
 
          $user->update($request->all());
          return redirect()->route('user.profile.view');

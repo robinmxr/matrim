@@ -16,11 +16,11 @@
     </div>
   </section><!-- End Breadcrumbs -->
   <div class="container rounded bg-white mt-5 mb-5">
-      <form action="{{ route('user.profile.update') }}" method="post">
+      <form action="{{ route('user.profile.update') }}" method="post" enctype="multipart/form-data">>
           @csrf
     <div class="row">
         <div class="col-md-3 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">{{ $user->name }}</span><span class="text-black-50">{{ $user->email }}</span><span> </span></div>
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="/storage/users-avatar/{{$user->avatar}}"><span class="font-weight-bold">{{ $user->name }}</span><span class="text-black-50">{{ $user->email }}</span><span> </span></div>
         </div>
         <div class="col-md-5 border-right">
             <div class="p-3 py-5">
@@ -64,6 +64,9 @@
                 </div>
                 <div class="row mt-2">
                     <label class="labels mb-2">About Me</label><textarea name="about" class="form-control">{{ $user->about }} </textarea>
+                </div>
+                <div class="row mt-2">
+                    <label class="labels mb-2">User Avatar</label><input type="file" name="avatar" class="form-control">
                 </div>
             </div>
             <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Save Changes</button></div>

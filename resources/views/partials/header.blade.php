@@ -74,6 +74,7 @@
           <li class="dropdown"><a href="#"><span>{{ Auth::user()->name }}</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="{{ route('user.profile.view') }}">Dashboard</a></li>
+              <li><a href="/message">Message</a></li>
                 @if(auth()->user()->is_admin)
                     <li><a href="{{ route('admin.index') }}">Admin Panel</a></li>
                 @endif

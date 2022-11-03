@@ -4,22 +4,22 @@
     <div class="container">
 
       <div class="d-flex justify-content-between align-items-center">
-        <h2>Edit Profile</h2>
+        <h2>Contact Us</h2>
         <ol>
           <li><a href="#">Home</a></li>
-          <li>Profile</li>
-          <li>Edit</li>
+          <li>Contact</li>
+
         </ol>
       </div>
       <section id="contact" class="contact">
         <div class="container" data-aos="fade-up">
-  
+
           <div class="section-title">
             <h2>Contact</h2>
             <h3><span>Contact Us</span></h3>
             <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
           </div>
-  
+
           <div class="row" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-6">
               <div class="info-box mb-4">
@@ -28,7 +28,7 @@
                 <p>Uttara , Dhaka</p>
               </div>
             </div>
-  
+
             <div class="col-lg-3 col-md-6">
               <div class="info-box  mb-4">
                 <i class="bx bx-envelope"></i>
@@ -36,7 +36,7 @@
                 <p>contact@example.com</p>
               </div>
             </div>
-  
+
             <div class="col-lg-3 col-md-6">
               <div class="info-box  mb-4">
                 <i class="bx bx-phone-call"></i>
@@ -44,13 +44,13 @@
                 <p>+1 0000 00000 00</p>
               </div>
             </div>
-  
+
           </div>
-  
+
           <div class="row" data-aos="fade-up" data-aos-delay="100">
-  
+
             <div class="col-lg-12">
-              <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <form action="" method="post" role="form" class="php-email-form">
                 <div class="row">
                   <div class="col form-group">
                     <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -73,9 +73,9 @@
                 <div class="text-center"><button type="submit">Send Message</button></div>
               </form>
             </div>
-  
+
           </div>
-  
+
         </div>
       </section>
     </div>

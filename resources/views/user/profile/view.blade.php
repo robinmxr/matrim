@@ -38,7 +38,7 @@
         @endforeach
 
         <div class="col-md-3 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">{{ $user->name }}</span>
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="/storage/users-avatar/{{$user->avatar}}"><span class="font-weight-bold">{{ $user->name }}</span>
             </div>
 
             <div class="alert alert-warning"><h5 class="text">Account Status</h5>{{ $user->status }}</div>
