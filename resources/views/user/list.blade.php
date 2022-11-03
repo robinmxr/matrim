@@ -29,9 +29,9 @@
                <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="150">
                   <a href="{{ route('user.view',$user->id) }}" > <div class="member">
                         <div class="member-img">
-                            <img src="{{ asset('img/team/team-1.jpg')}}" class="img-fluid" alt="">
+                            <img src="/storage/users-avatar/{{$user->avatar}}" class="img-fluid" alt="">
                             <div class="social">
-                               
+
                             </div>
                         </div>
                         <div class="member-info">

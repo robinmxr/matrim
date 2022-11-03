@@ -15,7 +15,7 @@
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex flex-column align-items-center text-center">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin">
+                    <img src="/storage/users-avatar/{{$user->avatar}}" alt="Admin">
                     <div class="mt-3">
                       <h4>{{ $user->name }}</h4>
                       <div class="col-sm-12">

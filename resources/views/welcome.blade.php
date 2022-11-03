@@ -7,10 +7,7 @@
       <h2>Matrimony in Bangladesh for finding your life partner</h2>
       <div class="d-flex">
         <a href="{{ route('search') }}" class="btn-get-started scrollto">Start Looking <i class="bi bi-search-heart"></i> </a>
-<<<<<<< HEAD
 
-=======
->>>>>>> 5d1e86d (search page)
       </div>
     </div>
   </section><!-- End Hero -->
@@ -85,7 +82,7 @@
               <div class="member">
                 <div class="member-img">
                   <img src="{{  asset('img/team/team-2.jpg')}}" class="img-fluid" alt="">
-               
+
                 </div>
                 <div class="member-info">
                   <h4>Sarah Jhonson</h4>
@@ -98,7 +95,7 @@
               <div class="member">
                 <div class="member-img">
                   <img src="{{ asset('img/team/team-3.jpg')}}" class="img-fluid" alt="">
-                
+
                 </div>
                 <div class="member-info">
                   <h4>William Anderson</h4>
