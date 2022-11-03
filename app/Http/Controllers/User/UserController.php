@@ -18,6 +18,7 @@ class UserController extends Controller
     {
         return view('welcome');
     }
+<<<<<<< HEAD
     public function about()
     {
         return view('about');
@@ -26,6 +27,8 @@ class UserController extends Controller
     {
         return view('contact');
     }
+=======
+>>>>>>> 5d1e86d (search page)
     public function search()
     {
         return view('search');

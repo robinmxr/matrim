@@ -17,11 +17,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[UserController::class,'home'])->name('home');
+Route::get('/search',[UserController::class,'search'])->name('search');
 
+<<<<<<< HEAD
 Route::get('/about',[UserController::class,'about'])->name('about');
 Route::get('/contact',[UserController::class,'contact'])->name('contact');
 Route::get('/search',[UserController::class,'search'])->name('search');
 Route::get('/search/{gender}',[UserController::class,'searchresult'])->name('search.view');
+=======
+>>>>>>> 5d1e86d (search page)
 
 Route::group(['middleware' => 'auth'],function(){
 
@@ -53,9 +57,13 @@ Route::group(['middleware' => 'auth'],function(){
        Route::get('/user/',[AdminController::class,'showUsers'])->name('user.show');
        Route::get('/user/{id}',[AdminController::class,'viewUser'])->name('user.view');
        Route::post('/user/{id}/approve',[AdminController::class,'approveUser'])->name('user.approve');
+<<<<<<< HEAD
        Route::post('/user/{id}/decline',[AdminController::class,'declineUser'])->name('user.decline');
 
 
+=======
+       Route::post('/user/{id}',[AdminController::class,'declineUser'])->name('user.decline');
+>>>>>>> 5d1e86d (search page)
    });
 
     Route::get('/payment', [SslCommerzPaymentController::class, 'showPayment'])->name('payment.show');
